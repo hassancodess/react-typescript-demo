@@ -1,11 +1,13 @@
+import { useState } from 'react'
 import Header from './components/Header'
-import Navbar from './components/shared/BottomNavbar'
+import InputField from './components/shared/InputField'
 
 const App: React.FC = () => {
+  const [todo, setTodo] = useState<string>('')
   return (
     <>
       <Header />
-      <Navbar />
+      <InputField todo={todo} setTodo={setTodo} />
     </>
   )
 }

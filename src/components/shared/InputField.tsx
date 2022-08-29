@@ -15,7 +15,7 @@ const InputField: React.FC<Props> = ({ todo, setTodo, handleAdd }) => {
           ref={inp}
           type='text'
           placeholder='Enter something…'
-          className='input input-bordered input-primary w-full max-w-lg'
+          className='input input-bordered input-secondary md:w-full md:max-w-lg'
           value={todo}
           onChange={(e) => {
             setTodo(e.target.value)

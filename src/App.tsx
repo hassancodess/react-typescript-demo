@@ -1,6 +1,8 @@
-import { FormEvent, useEffect, useState } from 'react'
-import Header from './components/Header'
+import { useEffect, useState } from 'react'
 import InputField from './components/shared/InputField'
+import TopNavbar from './components/shared/TopNavbar'
+import BottomNavbar from './components/shared/BottomNavbar'
+import TodoList from './components/TodoList'
 import Todo from './models/todo'
 
 const App: React.FC = () => {
@@ -22,8 +24,10 @@ const App: React.FC = () => {
 
   return (
     <>
-      <Header />
+      <TopNavbar />
       <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
+      <TodoList todos={todos} setTodos={setTodos} />
+      <BottomNavbar />
     </>
   )
 }

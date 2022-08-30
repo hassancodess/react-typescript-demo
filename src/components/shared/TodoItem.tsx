@@ -12,13 +12,9 @@ const TodoItem: React.FC<Props> = ({ todo, todos, setTodos }) => {
         return item.id === id ? { ...item, isDone: !item.isDone } : item
       })
     )
-    // todos.map((todo) => {
-    //   // return todo.id === id ? { ...todo, isDone: true } : todo
-    //   if (todo.id === id) {
-    //     console.log('Found')
-    //     return { ...todo, isDone: true }
-    //   }
-    // })
+  }
+  const handleDelete = (id: number) => {
+    setTodos(todos.filter((item) => item.id !== id))
   }
 
   return (
@@ -34,7 +30,12 @@ const TodoItem: React.FC<Props> = ({ todo, todos, setTodos }) => {
           <h2 className='card-title'>Shoes!</h2>
           <div className='card-actions justify-end'>
             <button className='btn btn-xs btn-warning'>Edit</button>
-            <button className='btn btn-xs btn-error'>Delete</button>
+            <button
+              className='btn btn-xs btn-error '
+              onClick={(e) => handleDelete(todo.id)}
+            >
+              Delete
+            </button>
             <button
               className='btn btn-xs btn-success'
               onClick={(e) => handleDone(todo.id)}
